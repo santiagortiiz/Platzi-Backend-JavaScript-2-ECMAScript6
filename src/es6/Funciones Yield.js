@@ -127,6 +127,8 @@ import { hello } from './module';
 
 hello();
 
+// Transform a function into a generator adding * after function
+// and using yield instead of return
 function* helloWorld() {
   if (true) {
     yield 'Hello, ';
@@ -146,3 +148,6 @@ const o = {
   [a]: 'VAR1'
 }
 console.log(o)
+
+const letters = ['A', 'B', 'C']
+letters.forEach( letter => [letter] = 'OMG')

@@ -3,8 +3,8 @@ let persona = {
     age: "25",
     pais: "Col",
 }
-let { id, pais, } = persona;
-console.log(nombre)
+let { age, pais, } = persona;
+console.log(age, pais)
 // console.log(others)
 
 

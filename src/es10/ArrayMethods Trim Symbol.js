@@ -1,10 +1,25 @@
-let array = [1,2,3, [1,2,3, [1,2,3]]];
+function findArrayDepth(arr) {
+  let depth = 0
+  let flatArray
+  let depthFound = false
 
-console.log(array.flat(2));
+  while (!depthFound) {
+    flatArray = arr.flat(depth)
 
-let array = [1,2,3,4,5];
+    // Check if any item in the list is an Array type object
+    if ( flatArray.every(item => !Array.isArray(item))) depthFound = true
+    depth += 1
+  }
 
+  return { flatArray, depth }
+}
+let array = [ 1, [2], [2, [3, [4]]] ]
+console.log(findArrayDepth(array))
+
+let array = [1, 2, 3];
+// Flat the result of the map
 console.log(array.flatMap(value => [value, value * 2]));
+console.log(array.map(value => [value, value * 2]));
 
 let hello = '        hello world';
 console.log(hello);
